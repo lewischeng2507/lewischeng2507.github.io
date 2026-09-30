@@ -1,0 +1,61 @@
+:root{--ink:#1c2233;--mute:#5b6275;--paper:#fafaf8;--line:#e3e3df;--dusk:#3f4470;--peach:#d98a64;--teal:#2c4a52;--r:10px}
+@media (prefers-color-scheme:dark){:root{--ink:#eceef5;--mute:#a4a9bb;--paper:#14171f;--line:#2a2f3d;--dusk:#8b90c8;--peach:#e8a27c}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 Inter,system-ui,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--peach);outline-offset:3px}
+
+.nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;justify-content:space-between;align-items:center;min-height:56px;flex-wrap:wrap;gap:4px 20px}
+.brand{font:500 1.15rem Oswald,sans-serif;text-decoration:none;letter-spacing:.02em}
+nav a{margin-left:20px;text-decoration:none;color:var(--mute);font-size:.95rem;font-weight:500}
+nav a:hover{color:var(--ink)}
+
+.hero{color:#fff;padding:120px 0 110px;background:url(../assets/images/hero.jpg) center/cover,linear-gradient(175deg,#3c4268 0%,#6a6a94 45%,#b79aa6 75%,#e9a987 100%)}
+.hero h1{font:300 clamp(3.5rem,11vw,7rem)/1 Oswald,sans-serif;margin:0 0 14px;letter-spacing:.005em}
+.sub{font:500 clamp(1.15rem,3vw,1.6rem) Inter,sans-serif;margin:0 0 20px}
+.lede{max-width:34em;font-size:1.15rem;margin:0 0 32px;opacity:.95}
+.btn{display:inline-block;padding:11px 22px;border:2px solid currentColor;border-radius:var(--r);text-decoration:none;font-weight:600;font-size:.97rem;margin:0 12px 12px 0;background:var(--ink);color:var(--paper);border-color:var(--ink);transition:background .15s,color .15s}
+.hero .btn{background:#fff;color:#2a2f4a;border-color:#fff}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.hero .btn.ghost{color:#fff;border-color:#fff}
+.btn:hover{background:var(--peach);border-color:var(--peach);color:#1c1408}
+
+.about{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-top:40px;padding-bottom:10px}
+.about div{border-left:3px solid var(--peach);padding-left:14px}
+.about strong{display:block;font:500 2rem/1.1 Oswald,sans-serif}
+.about span{color:var(--mute);font-size:.9rem}
+
+section.wrap{padding-top:64px;padding-bottom:8px}
+h2{font:500 clamp(2rem,5vw,2.75rem)/1.1 Oswald,sans-serif;margin:0 0 32px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+h3{font-size:1.25rem;margin:0 0 4px}
+
+.entry{display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:start;padding:10px 0 44px}
+.meta{color:var(--mute);margin:0 0 14px;font-size:.95rem}
+.entry ul{margin:0;padding-left:1.2em}
+.entry li{margin-bottom:8px;max-width:38em}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0}
+.tags span{font-size:.85rem;font-weight:500;padding:3px 12px;border:1px solid var(--line);border-radius:99px;color:var(--dusk)}
+
+.ph{margin:0;aspect-ratio:4/3;border-radius:var(--r);overflow:hidden;position:relative;background:color-mix(in srgb,var(--dusk) 8%,var(--paper));border:2px dashed var(--line);display:grid;place-items:center;text-align:center;color:var(--mute);font-size:.9rem;padding:16px}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph.has{border:0}
+.ph:not(.has)::after{content:"Photo goes here\A assets/images/" attr(data-file);white-space:pre;line-height:1.6}
+.ph:not(.has) img{display:none}
+
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 40px;padding-bottom:40px}
+.skills p{margin:0;color:var(--mute)}
+.contact-line{font-size:1.25rem;margin:0 0 20px}
+#contact{padding-bottom:70px}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--mute);font-size:.9rem}
+
+@media (max-width:760px){
+  .entry{grid-template-columns:1fr;gap:20px}
+  .about,.skills{grid-template-columns:1fr 1fr}
+  .skills{grid-template-columns:1fr}
+  nav a{margin:0 14px 0 0}
+  .hero{padding:80px 0 70px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
