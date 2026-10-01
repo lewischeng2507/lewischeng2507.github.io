@@ -76,3 +76,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--mute);font-si
 
 .project .frc-swerve-photo{aspect-ratio:1/1}
 .project .frc-chassis-photo{aspect-ratio:2/3}
+
+.project .tester-photos{aspect-ratio:auto;display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px;align-items:center}
+.project .tester-photos img{position:static;width:100%;height:auto;max-height:380px;object-fit:contain}
+@media (max-width:760px){.project .tester-photos{grid-template-columns:1fr}.project .tester-photos img{max-height:55vh}}
